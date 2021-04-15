@@ -1,11 +1,14 @@
 {
   "name": "gcp-ng-app",
   "version": "0.0.0",
+  "engines": {
+    "node": "14.x.x"
+  },
   "scripts": {
     "ng": "ng",
     "start": "npm run serve:ssr",
     "start:dev": "ng serve",
-    "build": "ng build",
+    "build": "ng run gcp-ng-app:prerender",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

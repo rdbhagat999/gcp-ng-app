@@ -8,7 +8,7 @@
     "ng": "ng",
     "start": "npm run serve:ssr",
     "start:dev": "ng serve",
-    "build": "npm run prerender",
+    "build": "npm run build:ssr",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

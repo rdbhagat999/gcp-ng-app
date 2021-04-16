@@ -29,6 +29,10 @@ export function app(): express.Express {
     maxAge: '1y'
   }));
 
+  server.get('/_ah/warmup', (req, res) => {
+    res.send('Warming up!');
+  });
+
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
     res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
@@ -43,6 +47,10 @@ function run(): void {
   // Start up the Node server
   const server = app();
   // server.set('trust proxy', true);
+  // server.use( (req, res, next) => {
+  //   res.set('Cache-Control', 'no-store, max-age=0');
+  //   next();
+  // });
   server.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
